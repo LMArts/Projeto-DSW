@@ -6,6 +6,7 @@ import Qrcode from './components/qrcode/qrcode';
 import ViewChild from './components/viewChilds/viewChilds'
 import CadResponsavel from './components/cadResponsavel/cadResponsavel';
 import CadCrianca from './components/cadCrianca/cadCrianca';
+import Teste from './components/teste/teste';
 import './styles.css';
 
 class App extends Component{
@@ -20,6 +21,7 @@ class App extends Component{
             <Route path="/child" component={ViewChild} />
             <Route path="/cadastro_responsavel" component={CadResponsavel} />
             <Route path="/cadastro_crianca" component={CadCrianca} />
+            <Route path="/teste" component={Teste} />
           </Switch>
         </main>
       </div >

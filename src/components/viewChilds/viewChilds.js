@@ -3,8 +3,8 @@ import add from '../../image/add.png';
 import voltar from '../../image/return.png';
 
 const ViewChild = () => (
-    <div class="container_viewChild">
-        <div class="block_return">
+    <div className="container_viewChild">
+        <div className="block_return">
           <a href="/menu"><img src={voltar} alt="return"/></a>
           <span>Crianças</span>
         </div>

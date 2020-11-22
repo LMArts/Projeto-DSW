@@ -4,7 +4,7 @@ import voltar from '../../image/return.png';
 const Qrcode = () => (
   <div className="container_general">
     <a className="returnQrcode" href="/menu"><img src={voltar} alt="voltar"/></a>
-    <div class="container_qrcode">
+    <div className="container_qrcode">
       <img src={qrcode} alt="qrcode"/>
       <p>Nome: Gabriela Silva</p>
       <p>Sexo: Feminino</p>
