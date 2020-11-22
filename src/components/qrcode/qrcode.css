@@ -1,0 +1,29 @@
+.container_qrcode{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 475px;
+  background: #fff;
+  width: 400px;
+  margin:5% auto;
+  padding: 20px;
+  border-radius: 25px;
+}
+.container_qrcode img {
+  width: 185px;
+  margin: 41px 0px;
+}
+.btnShare {
+  margin: 25px 0;
+  width: 100%;
+  padding: 13px 50px;
+  border-radius: 5px;
+  border: 0px;
+  color: #fff;
+  background: #000;
+}
+.returnQrcode {
+  padding: 12px 20px;
+  display: block;
+}

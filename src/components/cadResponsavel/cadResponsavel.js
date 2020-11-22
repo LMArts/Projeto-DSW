@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import location from '../../image/location.png';
 import './cadResponsavel.css';
 
@@ -48,8 +49,8 @@ const CadResponsavel = () => (
                     <input type="text" className='field' />
                 </div>
             </div>
-            <button type='submit' className="btn">Finalizar Cadastro</button>
-            <button className="btn">Cancelar</button>
+            <Link to="/menu"><button type='submit' className="btn">Finalizar Cadastro</button></Link>
+            <Link to="/login"><button className="btn">Cancelar</button></Link>
         </div>
     </form>
     

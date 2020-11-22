@@ -1,0 +1,27 @@
+.block_return {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.block_return a {
+  margin: 0px 25px 0 0px;
+}
+.block_return span {
+  font-size: 30px;
+  font-weight: 700;
+}
+.cardChilds h4 {
+  width: 30%;
+  background: #f1f1f1;
+  padding: 30px;
+  margin: 25px;
+  border-radius: 10px;
+  color: #000;
+}
+
+.blockAddChild {
+    text-align: end;
+    position: fixed;
+    bottom: 17px;
+    right: 30px;
+}

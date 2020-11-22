@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import FormLogin from './components/login/login';
-import Teste from './components/teste/teste';
+import Menu from './components/menu/menu';
+import Qrcode from './components/qrcode/qrcode';
+import ViewChild from './components/viewChilds/viewChilds'
 import CadResponsavel from './components/cadResponsavel/cadResponsavel';
+import CadCrianca from './components/cadCrianca/cadCrianca';
 import './styles.css';
 
 class App extends Component{
@@ -11,9 +14,12 @@ class App extends Component{
       <div className = "App" >
         <main>
           <Switch>
-            <Route exact path="/" component={FormLogin} />
-            <Route path="/teste" component={Teste} />
+            <Route exact path="/login" component={FormLogin} />
+            <Route path="/menu" component={Menu} />
+            <Route path="/qrcode" component={Qrcode} />
+            <Route path="/child" component={ViewChild} />
             <Route path="/cadastro_responsavel" component={CadResponsavel} />
+            <Route path="/cadastro_crianca" component={CadCrianca} />
           </Switch>
         </main>
       </div >
