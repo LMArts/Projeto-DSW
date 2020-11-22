@@ -1,5 +1,5 @@
 import './login.css';
-import location from './location.png';
+import location from '../../image/location.png';
 import { Link } from 'react-router-dom';
 
 const FormLogin = () => (
@@ -7,8 +7,8 @@ const FormLogin = () => (
         <img src={location} alt='logo'/>
         <input type="email" placeholder="Email" className="field" />
         <input type="password" placeholder="Senha" className="field" />
-        <Link to='/page'><button className="btnLogin">Entrar</button></Link>
-        <a href="#" className="linkLogin">Ainda não tenho cadastro!</a>
+        <Link to='/teste'><button className="btnLogin">Entrar</button></Link>
+        <Link to='/cadastro_responsavel' className="linkLogin">Ainda não tenho cadastro!</Link>
     </div>
 );
 
