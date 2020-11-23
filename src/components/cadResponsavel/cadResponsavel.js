@@ -50,7 +50,7 @@ const CadResponsavel = () => (
                 </div>
             </div>
             <Link to="/menu"><button type='submit' className="btn">Finalizar Cadastro</button></Link>
-            <Link to="/login"><button className="btn">Cancelar</button></Link>
+            <Link to="/"><button className="btn">Cancelar</button></Link>
         </div>
     </form>
     

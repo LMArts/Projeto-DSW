@@ -9,7 +9,7 @@ const ViewChild = () => (
           <span>Crianças</span>
         </div>
         <div className="content_cardChilds">
-        <a className="row_cardChilds" href="#">
+        <a className="row_cardChilds" href="/perfil_crianca">
             <div className="cardChilds">
               <h4>Gabriela Silva</h4>
             </div>

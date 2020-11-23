@@ -12,7 +12,7 @@ const Menu = () => (
                 <h1 className="welcomeMenu">Bem vindo(a)!</h1>
             </div>
             <div className="block_closeMenu">
-                <a className="closeMenu" href="/login"><img src={close} alt="close" /></a>
+                <a className="closeMenu" href="/"><img src={close} alt="close" /></a>
             </div>
         </div>
         <div className="content_menu">
@@ -22,7 +22,7 @@ const Menu = () => (
                     <h4>Criança</h4>
                 </div>
             </a>
-            <a className="menuItem" href="#">
+            <a className="menuItem" href="/perfil_responsavel">
                 <div className="card_info">
                     <img src={users} alt="usuario" />
                     <h4>Perfil</h4>
