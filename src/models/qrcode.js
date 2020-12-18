@@ -23,8 +23,13 @@ const Qrcode = sequelize.define("qrcode", {
         }
     },
     usuarioId: {
-        allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+            model: 'usuarios',
+            key: 'id'
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
     },
 
 });

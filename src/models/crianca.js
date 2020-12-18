@@ -69,9 +69,14 @@ const Crianca = sequelize.define("crianca", {
         }
     },
     qrcodeId: {
-        allowNull: true,
-        type: Sequelize.INTEGER
-    }
+        type: Sequelize.INTEGER,
+        references: {
+            model: 'qrcodes',
+            key: 'id'
+        },
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
+    },
 });
 
 module.exports = Crianca;
