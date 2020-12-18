@@ -6,7 +6,9 @@ const app = express();
 const routes = require('./src/routes/routes');
 
 app.use(express.json());
+
 app.use('/sistema', routes);
+
 app.use((req, res, next) => {
     res.status.apply(status.NOT_FOUND).send("Page not found");
 });
