@@ -46,6 +46,33 @@ exports.SelectOne = (req, res, next)=>{
 
 }
 
+exports.Update = (req, res, next) => {
+    const id = req.params.id;
+    const codigo = req.body.codigo;
+    const localizacao = req.body.localizacao;
+    const usuarioId = req.body.usuarioId;
+
+    Qrcode.findByPk(id)
+        .then(qrcode => {
+            if (qrcode) {
+                qrcode.update({
+                    codigo: codigo,
+                    localizacao: localizacao,
+                    usuarioId: usuarioId,
+                },
+                    {
+                        where: { id: id }
+                    })
+                    .then(() => {
+                        res.status(status.OK).send();
+                    })
+                    .catch(error => next(error));
+            } else {
+                res.status(status.NOT_FOUND).send();
+            }
+        })
+        .catch(error => next(error));
+}
 
 exports.Delete =  (req, res, next)=>{
     const id = req.params.id;
