@@ -3,12 +3,12 @@ const status = require('http-status');
 
 exports.Insert = (req, res, next) => {
     const codigo = req.body.codigo;
-    const localizao = req.body.localizao;
+    const localizacao = req.body.localizacao;
     const usuarioId = req.body.usuarioId;
 
-    Qrcode.Create({
+    Qrcode.create({
         codigo: codigo,
-        localizao: localizao,
+        localizacao: localizacao,
         usuarioId: usuarioId,
     })
     .then(qrcode => {

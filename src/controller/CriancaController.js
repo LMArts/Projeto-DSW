@@ -13,7 +13,7 @@ exports.Insert = (req, res, next) => {
     const observacao = req.body.observacao;
     const qrcodeId = req.body.qrcodeId;
 
-    Crianca.Create({
+    Crianca.create({
         nome: nome,
         dataNasc: dataNasc,
         sexo: sexo,

@@ -51,14 +51,14 @@ const Crianca = sequelize.define("crianca", {
         allowNull: false,
         type: Sequelize.STRING(20),
         validate: {
-            len: [10, 20]
+            len: [1, 20]
         }
     },
     tomPele: {
         allowNull: false,
         type: Sequelize.STRING(20),
         validate: {
-            len: [10, 20]
+            len: [1, 20]
         }
     },
     observacao: {

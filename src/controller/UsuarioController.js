@@ -12,7 +12,7 @@ exports.Insert = (req, res, next) => {
     const numero = req.body.numero;
     const senha = req.body.senha;
 
-    Usuario.Create({
+    Usuario.create({
         nome: nome,
         telefone: telefone,
         email: email,
@@ -28,6 +28,16 @@ exports.Insert = (req, res, next) => {
             res.status(status.OK).send(usuario);
         } else {
             res.status(status.NOT_FOUND).send();
+        }
+    })
+    .catch(error => next(error));
+}
+
+exports.SelectAll = (req, res, next)=>{
+    Usuario.findAll()
+    .then(usuario => {
+        if(usuario){
+            res.status(status.OK).send(usuario);
         }
     })
     .catch(error => next(error));
