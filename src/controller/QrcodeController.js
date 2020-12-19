@@ -20,3 +20,28 @@ exports.Insert = (req, res, next) => {
     })
     .catch(error => next(error));
 }
+
+exports.SelectAll = (req, res, next)=>{
+    Qrcode.findAll()
+    .then(qrcode => {
+        if(qrcode){
+            res.status(status.OK).send(qrcode);
+        }
+    })
+    .catch(error => next(error));
+}
+
+exports.SelectOne = (req, res, next)=>{
+    const id = req.params.id;
+
+    Qrcode.findByPk(id)
+    .then(qrcode =>{
+        if(qrcode){
+            res.status(status.OK).send(qrcode);
+        } else {
+            res.status(status.NOT_FOUND).send();
+        }
+    })
+    .catch(error => next(error));
+
+}
