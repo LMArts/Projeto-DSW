@@ -25,14 +25,39 @@ exports.Insert = (req, res, next) => {
         observacao: observacao,
         qrcodeId: qrcodeId
     })
-    .then(crianca => {
-        if(crianca){
-            res.status(status.OK).send(crianca);
-        } else {
-            res.status(status.NOT_FOUND).send();
-        }
-    })
-    .catch(error => next(error));
+        .then(crianca => {
+            if (crianca) {
+                res.status(status.OK).send(crianca);
+            } else {
+                res.status(status.NOT_FOUND).send();
+            }
+        })
+        .catch(error => next(error));
+}
+
+exports.SelectAll = (req, res, next) => {
+    Crianca.findAll()
+        .then(crianca => {
+            if (crianca) {
+                res.status(status.OK).send(crianca);
+            }
+        })
+        .catch(error => next(error));
+}
+
+exports.SelectOne = (req, res, next) => {
+    const id = req.params.id;
+
+    Crianca.findByPk(id)
+        .then(crianca => {
+            if (crianca) {
+                res.status(status.OK).send(crianca);
+            } else {
+                res.status(status.NOT_FOUND).send();
+            }
+        })
+        .catch(error => next(error));
+
 }
 
 exports.Update = (req, res, next) => {

@@ -33,6 +33,31 @@ exports.Insert = (req, res, next) => {
         .catch(error => next(error));
 }
 
+exports.SelectAll = (req, res, next) => {
+    Usuario.findAll()
+        .then(usuario => {
+            if (usuario) {
+                res.status(status.OK).send(usuario);
+            }
+        })
+        .catch(error => next(error));
+}
+
+exports.SelectOne = (req, res, next) => {
+    const id = req.params.id;
+
+    Usuario.findByPk(id)
+        .then(usuario => {
+            if (usuario) {
+                res.status(status.OK).send(usuario);
+            } else {
+                res.status(status.NOT_FOUND).send();
+            }
+        })
+        .catch(error => next(error));
+
+}
+
 exports.Update = (req, res, next) => {
     const id = req.params.id;
     const nome = req.body.nome;
@@ -46,29 +71,29 @@ exports.Update = (req, res, next) => {
     const senha = req.body.senha;
 
     Usuario.findByPk(id)
-    .then(usuario=>{
-        if(usuario){
-            usuario.update({
-                nome: nome,
-                telefone: telefone,
-                email: email,
-                cidade: cidade,
-                estado: estado,
-                rua: rua,
-                bairro: bairro,
-                numero: numero,
-                senha: senha
-            },
-                {
-                    where: {id:id}
-                })
-                .then(()=>{
-                    res.status(status.OK).send();
-                })
-                .catch(error=>next(error));
-        } else {
-            res.status(status.NOT_FOUND).send(); 
-        }
-    })
-    .catch(error => next(error));
+        .then(usuario => {
+            if (usuario) {
+                usuario.update({
+                    nome: nome,
+                    telefone: telefone,
+                    email: email,
+                    cidade: cidade,
+                    estado: estado,
+                    rua: rua,
+                    bairro: bairro,
+                    numero: numero,
+                    senha: senha
+                },
+                    {
+                        where: { id: id }
+                    })
+                    .then(() => {
+                        res.status(status.OK).send();
+                    })
+                    .catch(error => next(error));
+            } else {
+                res.status(status.NOT_FOUND).send();
+            }
+        })
+        .catch(error => next(error));
 }
