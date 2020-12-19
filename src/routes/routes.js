@@ -5,8 +5,12 @@ const CriancaController = require('../controller/CriancaController');
 const QrcodeController = require('../controller/QrcodeController');
 
 router.post('/usuarios', UsuarioController.Insert);
-router.get('/usuarios', UsuarioController.SelectAll);
+router.put('/usuarios/:id', UsuarioController.Update);
+
 router.post('/criancas', CriancaController.Insert);
+router.put('/criancas/:id', CriancaController.Update);
+
 router.post('/qrcodes', QrcodeController.Insert);
+router.put('/qrcodes/:id', QrcodeController.Update);
 
 module.exports = router;
