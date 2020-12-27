@@ -1,0 +1,35 @@
+.block_headerMenu {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+.content_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    flex-direction: column;
+}
+.menuItem {
+    background: #dedede;
+    width: 300px;
+    margin: 7px;
+    padding: 30px 20px;
+    color: #000;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: sans-serif;
+    border-radius: 10px;
+    height: 135px;
+    box-shadow: 1px 2px 3px #d2d2d2;
+}
+.card_info {
+    display: flex;
+    align-items: center;
+}
+.card_info img {
+    width: 80px;
+}
+.card_info h4{
+    margin-left: 30px;
+}
