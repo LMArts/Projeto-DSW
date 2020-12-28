@@ -33,12 +33,39 @@ app.post("/insert", (req, res)=>{
     })
 })
 
-{/**app.get("/", (req, res) =>{
-    const select = "SELECT * FROM criancas";
+app.post("/insertCrianca", (req, res) => {
+
+    const nome = req.body.nome
+    const dataNasc = req.body.dataNasc
+    const sexo = req.body.sexo
+    const grauParentesco = req.body.grauParentesco
+    const corOlho = req.body.corOlho
+    const corCabelo = req.body.corCabelo
+    const tipoCabelo = req.body.tipoCabelo
+    const tomPele = req.body.tomPele
+    const observacao = req.body.observacao
+    const qrcodeId = req.body.qrcodeId
+
+    const insert = "INSERT INTO criancas (nome, dataNasc, sexo, grauParentesco, corOlho, corCabelo, tipoCabelo, tomPele, observacao, qrcodeId) VALUES (?,?,?,?,?,?,?,?,?,?)"
+    connection.query(insert, [nome, dataNasc, sexo, grauParentesco, corOlho, corCabelo, tipoCabelo, tomPele, observacao, qrcodeId], (error, ressults) => {
+        console.log(ressults);
+    })
+})
+
+
+app.get("/select", (req, res) =>{
+    const select = "SELECT * FROM usuarios";
     connection.query(select, (error, result)=>{
         res.send(result);
     })
-})**/}
+})
+
+app.get("/selectCrianca", (req, res) => {
+    const select = "SELECT * FROM criancas";
+    connection.query(select, (error, result) => {
+        res.send(result);
+    })
+})
 
 app.listen(3001, ()=>{
     console.log("Servidor rodando!");

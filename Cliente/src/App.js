@@ -8,7 +8,6 @@ import CadResponsavel from './components/cadResponsavel/cadResponsavel';
 import CadCrianca from './components/cadCrianca/cadCrianca';
 import PerfilResp from './components/perfilResponsavel/perfilResp';
 import PerfilCrianca from './components/perfilCrianca/perfilCrianca'
-import Teste from './components/teste';
 import './styles.css';
 
 class App extends Component{
@@ -25,7 +24,6 @@ class App extends Component{
             <Route path="/cadastro_crianca" component={CadCrianca} />
             <Route path="/perfil_responsavel" component={PerfilResp} />
             <Route path="/perfil_crianca" component={PerfilCrianca} />
-            <Route path="/teste" component={Teste}/>
           </Switch>
         </main>
       </div >

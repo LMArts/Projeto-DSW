@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const PerfilCrianca = () => (
   <div class="container_perfilCrianca">
   <div class="block_return">
-    <a href="/menu"><img src={voltar} alt="return"/></a>
+    <a href="/child"><img src={voltar} alt="return"/></a>
     <span>Meu perfil</span>
   </div>
   <div class="content_perfilCrianca">
