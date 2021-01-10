@@ -21,8 +21,4 @@
 * Rode o comando npm start;
 * Abra http://localhost:3000 no navegador para visualizar o projeto.
 
-# Requisitos desenvolvidos
 
-* Realizar o cadastro do responsável pela criança;
-* Realizar o cadastro da criança a partir de formulário;
-* Exibir tela de perfil com os dados do usuário;
