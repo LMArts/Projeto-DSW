@@ -60,10 +60,73 @@ app.get("/select", (req, res) =>{
     })
 })
 
+app.post("/selectCrianca2", (req, res) => {
+    const id = req.body.id;
+    const select = "SELECT * FROM criancas WHERE id = ?";
+    connection.query(select, id, (error, result) => {
+        res.send(result);
+    })
+})
+
 app.get("/selectCrianca", (req, res) => {
     const select = "SELECT * FROM criancas";
     connection.query(select, (error, result) => {
         res.send(result);
+    })
+})
+
+app.post("/delete", (req, res) =>{
+    const id = req.body.id;
+    const sqlDelete = "DELETE FROM usuarios WHERE id = ?";
+    connection.query(sqlDelete, id, (error, result) =>{
+        if(error) console.log(error);
+    })
+})
+
+app.post("/deleteCrianca", (req, res) => {
+    const id = req.body.id;
+    const sqlDelete = "DELETE FROM criancas WHERE id = ?";
+    connection.query(sqlDelete, id, (error, result) => {
+        if (error) console.log(error);
+    })
+})
+
+app.post("/update", (req, res) => {
+
+    const id = req.body.id;
+    const nome = req.body.nome
+    const telefone = req.body.telefone
+    const email = req.body.email
+    const cidade = req.body.cidade
+    const estado = req.body.estado
+    const rua = req.body.rua
+    const bairro = req.body.bairro
+    const numero = req.body.numero
+    const senha = req.body.senha
+
+    const sqlUpdate = "UPDATE usuarios SET nome = ?, telefone = ?, email = ?, cidade = ?, estado = ?, rua = ?, bairro = ?, numero = ?, senha = ?  WHERE id = ?";
+    connection.query(sqlUpdate, [nome, telefone, email, cidade, estado, rua, bairro, numero, senha, id], (error, result) => {
+        if (error) console.log(error);
+    })
+})
+
+app.post("/updateCrianca", (req, res) => {
+
+    const id = req.body.id;
+    const nome = req.body.nome
+    const dataNasc = req.body.dataNasc
+    const sexo = req.body.sexo
+    const grauParentesco = req.body.grauParentesco
+    const corOlho = req.body.corOlho
+    const corCabelo = req.body.corCabelo
+    const tipoCabelo = req.body.tipoCabelo
+    const tomPele = req.body.tomPele
+    const observacao = req.body.observacao
+    const qrcodeId = req.body.qrcodeId
+
+    const sqlUpdate = "UPDATE criancas SET nome = ?, dataNasc = ?, sexo = ?, grauParentesco = ?, corOlho = ?, corCabelo = ?, tipoCabelo = ?, tomPele = ?, observacao = ?  WHERE id = ?";
+    connection.query(sqlUpdate, [nome, dataNasc, sexo, grauParentesco, corOlho, corCabelo, tipoCabelo, tomPele, observacao, id], (error, result) => {
+        if (error) console.log(error);
     })
 })
 

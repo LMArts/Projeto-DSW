@@ -25,11 +25,11 @@ function ViewChild () {
       <div className="content_cardChilds">
         {crianca.map((item) => {
           return (
-            <Link className="row_cardChilds" to={'/perfil_crianca'}>
+            <Link className="row_cardChilds" to={`/perfil_crianca/${item.id}`}>
               <div className="cardChilds">
                 <h4>{item.nome}</h4>
               </div>
-            </Link>  
+            </Link>
           )
         })}
       </div>

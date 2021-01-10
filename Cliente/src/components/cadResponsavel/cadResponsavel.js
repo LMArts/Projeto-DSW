@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import location from '../../image/location.png';
 import './cadResponsavel.css';
@@ -96,7 +96,7 @@ function CadResponsavel () {
                         }} />
                     </div>
                 </div>
-                <button className="btn" onClick={enviar}>Finalizar Cadastro</button>
+                <Link to="/menu"><button className="btn" onClick={enviar}>Finalizar Cadastro</button></Link>
                 <Link to="/"><button className="btn">Cancelar</button></Link>
             </div>
         </form>
